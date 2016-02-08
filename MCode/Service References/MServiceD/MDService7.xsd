@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.MCode.com/MClassLib/cConsignmentEx" elementFormDefault="qualified" targetNamespace="http://www.MCode.com/MClassLib/cConsignmentEx" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd5" namespace="http://www.MCode.com/MClassLib/cConsignmentItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd4" namespace="http://www.MCode.com/MClassLib/cListItem" />
+  <xs:complexType name="cConsignmentEx">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://www.MCode.com/MClassLib/cConsignmentItem" minOccurs="0" name="CNote" nillable="true" type="q1:cConsignmentItem" />
+      <xs:element minOccurs="0" name="IsLF_ReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRF_ReadOnly" type="xs:boolean" />
+      <xs:element xmlns:q2="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_BacterialInsiminateClass" nillable="true" type="q2:ArrayOfcListItem" />
+      <xs:element xmlns:q3="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_Contractor" nillable="true" type="q3:ArrayOfcListItem" />
+      <xs:element xmlns:q4="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_PurityGroup" nillable="true" type="q4:ArrayOfcListItem" />
+      <xs:element xmlns:q5="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_Sort" nillable="true" type="q5:ArrayOfcListItem" />
+      <xs:element xmlns:q6="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_Status" nillable="true" type="q6:ArrayOfcListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cConsignmentEx" nillable="true" type="tns:cConsignmentEx" />
+</xs:schema>

@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="MCode.UC.uc_Items_list"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+
+    <Border Style="{StaticResource brdr_Smoke}" >
+        <Grid x:Name="LayoutRoot" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Name="panel_control">
+                <!--<TextBlock Name="txt_tbl" Text="Имя таблицы" />-->
+            </StackPanel>
+
+            <sdk:DataGrid Name="dg_Root" AutoGenerateColumns="False" ItemsSource="{Binding}" MinWidth="300" Grid.Row="1" >
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=ID, Mode=TwoWay}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=Name, Mode=TwoWay}"></sdk:DataGridTextColumn>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=Short, Mode=TwoWay}"></sdk:DataGridTextColumn>
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+            <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Вставить" Name="btn_insertRow" Click="btn_insertRow_Click" Width="80" Height="24" Margin="6" />
+                    <Button Content="Удалить" Name="btn_delete" Click="btn_delete_Click" Width="80" Height="24" Margin="6" />
+                </StackPanel>
+                <Button Content="Сохранить изменения" Name="btn_update" Click="btn_update_Click" Background="Green" Height="24" Margin="6" Visibility="Collapsed" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

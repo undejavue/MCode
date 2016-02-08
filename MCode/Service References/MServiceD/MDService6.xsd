@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="MCodeSilverlightServer" elementFormDefault="qualified" targetNamespace="MCodeSilverlightServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd2" namespace="http://www.MCode.com/MClassLib/cMessageData" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd3" namespace="http://www.MCode.com/MClassLib/cBaseItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd4" namespace="http://www.MCode.com/MClassLib/cListItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd5" namespace="http://www.MCode.com/MClassLib/cConsignmentItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd6" namespace="http://www.MCode.com/MClassLib/cFilterlist" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd7" namespace="http://www.MCode.com/MClassLib/cConsignmentEx" />
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd8" namespace="http://www.MCode.com/MClassLib/cRD" />
+  <xs:element name="Connect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConnectResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Disonnect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadMessageArhive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadMessageArhiveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.MCode.com/MClassLib/cMessageData" minOccurs="0" name="uploadMessageArhiveResult" nillable="true" type="q1:ArrayOfcMessageData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadClients">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="uploadClientsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.MCode.com/MClassLib/cBaseItem" minOccurs="0" name="uploadClientsResult" nillable="true" type="q2:ArrayOfcBaseItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_StatusList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_StatusListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="srv_select_StatusListResult" nillable="true" type="q3:ArrayOfcListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_DataFromLists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tbl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_DataFromListsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="srv_select_DataFromListsResult" nillable="true" type="q4:ArrayOfcListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_work_DataFromLists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tbl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="items" nillable="true" type="q5:ArrayOfcListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_work_Consignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.MCode.com/MClassLib/cConsignmentItem" minOccurs="0" name="item" nillable="true" type="q6:cConsignmentItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_ConsignmentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.MCode.com/MClassLib/cFilterlist" minOccurs="0" name="filter" nillable="true" type="q7:cFilterlist" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_ConsignmentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.MCode.com/MClassLib/cConsignmentItem" minOccurs="0" name="srv_select_ConsignmentListResult" nillable="true" type="q8:ArrayOfcConsignmentItem" />
+        <xs:element minOccurs="0" name="statusString" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_ConsignmentEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_ConsignmentExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.MCode.com/MClassLib/cConsignmentEx" minOccurs="0" name="srv_select_ConsignmentExResult" nillable="true" type="q9:cConsignmentEx" />
+        <xs:element minOccurs="0" name="OpStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_upd_StatusChange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsignmentNoteID" type="xs:int" />
+        <xs:element minOccurs="0" name="StatusID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_RD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="BeginDT" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDT" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_RDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.MCode.com/MClassLib/cRD" minOccurs="0" name="srv_select_RDResult" nillable="true" type="q10:ArrayOfcRD" />
+        <xs:element minOccurs="0" name="OpStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendListItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_items" nillable="true" type="q11:ArrayOfcListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendListTTN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.MCode.com/MClassLib/cConsignmentItem" minOccurs="0" name="list_TTN" nillable="true" type="q12:ArrayOfcConsignmentItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTableUpdated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tableName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadMessageArhive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.MCode.com/MClassLib/cMessageData" minOccurs="0" name="data" nillable="true" type="q13:ArrayOfcMessageData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSingleMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.MCode.com/MClassLib/cMessageData" minOccurs="0" name="data" nillable="true" type="q14:cMessageData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendUpdateClients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

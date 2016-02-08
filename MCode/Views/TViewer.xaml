@@ -1,0 +1,75 @@
+﻿<navigation:Page x:Class="MCode.Views.TViewer" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+  mc:Ignorable="d" d:DesignWidth="840" d:DesignHeight="480"  
+                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:Behaviors="clr-namespace:Behaviors"
+  Style="{StaticResource PageStyle}" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my="clr-namespace:MCode.UC">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="box">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding IsSelected,Mode=TwoWay}" Content="{Binding Name,Mode=TwoWay}" Checked="CheckBox_Checked" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}" >
+
+            <StackPanel x:Name="ContentStackPanel" Style="{StaticResource ContentStackPanelStyle}">
+                <!--<Button Name="btn_RView" Content="  Отчет  " HorizontalAlignment="Left" Height="22" Margin="10">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <Behaviors:HTMLPopupWindow PopupURL="http://localhost/mcd/Report.aspx" PopupHeight="640" PopupWidth="680" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>-->
+                <!--<HyperlinkButton Content="Отчет" Height="23" Name="hyperlinkButton1"  Width="100" />-->
+                <StackPanel Name="panel_Root" HorizontalAlignment="Left">
+                    <StackPanel Name="panel_control"  Orientation="Horizontal">
+                        <sdk:DatePicker SelectedDate="{Binding BeginDT,Mode=TwoWay}" Margin="0,5,10,5" FontSize="12" SelectedDateFormat="Short" />
+                        <sdk:DatePicker SelectedDate="{Binding EndDT,Mode=TwoWay}" Margin="5" FontSize="12" SelectedDateFormat="Short" />
+                        <ComboBox Name="box_Contragents" Grid.Row="3" Grid.Column="3" MinWidth="240" Height="24" MaxWidth="300" HorizontalAlignment="Left" 
+                          ItemsSource="{Binding}" ItemTemplate="{StaticResource box}" 
+                          />
+                        <Button Name="btn_SetFilterDate" Content="  Выбрать  " Margin="5" FontSize="14" Click="btn_SetFilterDate_Click" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Background="WhiteSmoke" >
+                            <sdk:Label Content="В пересчете на базисную жирность   /    Принято в физическом весе " Height="22" Width="{Binding ElementName=dg_B,Path=Width}" BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Right" FontSize="12" />
+                            <sdk:DataGrid AutoGenerateColumns="False"  Name="dg_B" Width="800" >
+                                <sdk:DataGrid.Columns>
+                                    <sdk:DataGridTextColumn Binding="{Binding Contractor}" Header="Контрагент" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding B_sortExtra}" Header="Экстра" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding B_sortI}" Header="I" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding B_sortII}" Header="II" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding B_sortBC}" Header="В/С" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding B_sortFrozen}" Header="Из него охлажденного не выше 10 С" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding F_sortExtra}" Header="Экстра" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding F_sortI}" Header="I" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding F_sortII}" Header="II" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    <sdk:DataGridTextColumn Binding="{Binding F_sortBC}" Header="В/С" HeaderStyle="{StaticResource dg_Header2}"/>
+                                    
+                                </sdk:DataGrid.Columns>
+                            </sdk:DataGrid>
+                        </StackPanel>
+                        <!--<StackPanel Background="WhiteSmoke">
+                            <sdk:Label Content="Принято в физическом весе " Height="22" Width="{Binding ElementName=dg_F,Path=Width}" HorizontalAlignment="Right" FontSize="12" />
+                        <sdk:DataGrid AutoGenerateColumns="False"  Name="dg_F"  >
+                            <sdk:DataGrid.Columns>
+
+                            </sdk:DataGrid.Columns>
+                        </sdk:DataGrid>
+                        </StackPanel>-->
+                    </StackPanel>
+                </StackPanel>
+                
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+
+</navigation:Page>

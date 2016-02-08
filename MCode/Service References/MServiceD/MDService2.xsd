@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.MCode.com/MClassLib/cRD" elementFormDefault="qualified" targetNamespace="http://www.MCode.com/MClassLib/cRD" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfcRD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cRD" nillable="true" type="tns:cRD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcRD" nillable="true" type="tns:ArrayOfcRD" />
+  <xs:complexType name="cRD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contractor_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MassType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sort_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Val" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cRD" nillable="true" type="tns:cRD" />
+</xs:schema>

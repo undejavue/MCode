@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.MCode.com/MClassLib/cFilterlist" elementFormDefault="qualified" targetNamespace="http://www.MCode.com/MClassLib/cFilterlist" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd4" namespace="http://www.MCode.com/MClassLib/cListItem" />
+  <xs:complexType name="cFilterlist">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ConsignmentNoteID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDT" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusIDString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusNameString" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_allStatus" nillable="true" type="q1:ArrayOfcListItem" />
+      <xs:element xmlns:q2="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list_selectedStatus" nillable="true" type="q2:ArrayOfcListItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cFilterlist" nillable="true" type="tns:cFilterlist" />
+</xs:schema>

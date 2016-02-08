@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="NetTcpBinding_MDService">
+                    <binaryMessageEncoding />
+                    <tcpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="net.tcp://mns1-022n.simatek.local:4502/mcd/MDService.svc"
+                binding="customBinding" bindingConfiguration="NetTcpBinding_MDService"
+                contract="MServiceD.MDService" name="NetTcpBinding_MDService" />
+        </client>
+    </system.serviceModel>
+</configuration>

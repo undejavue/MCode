@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="MCodeSilverlightServer" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="MCodeSilverlightServer" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="MCodeSilverlightServer/Imports">
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd0" namespace="MCodeSilverlightServer" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd2" namespace="http://www.MCode.com/MClassLib/cMessageData" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd3" namespace="http://www.MCode.com/MClassLib/cBaseItem" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd4" namespace="http://www.MCode.com/MClassLib/cListItem" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd5" namespace="http://www.MCode.com/MClassLib/cConsignmentItem" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd6" namespace="http://www.MCode.com/MClassLib/cFilterlist" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd7" namespace="http://www.MCode.com/MClassLib/cConsignmentEx" />
+      <xsd:import schemaLocation="http://mns1-022n/mcd/MDService.svc?xsd=xsd8" namespace="http://www.MCode.com/MClassLib/cRD" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MDService_Connect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Connect" />
+  </wsdl:message>
+  <wsdl:message name="MDService_Connect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_Disonnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disonnect" />
+  </wsdl:message>
+  <wsdl:message name="MDService_uploadMessageArhive_InputMessage">
+    <wsdl:part name="parameters" element="tns:uploadMessageArhive" />
+  </wsdl:message>
+  <wsdl:message name="MDService_uploadMessageArhive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uploadMessageArhiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_uploadClients_InputMessage">
+    <wsdl:part name="parameters" element="tns:uploadClients" />
+  </wsdl:message>
+  <wsdl:message name="MDService_uploadClients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:uploadClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_StatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_StatusList" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_StatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_StatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_DataFromLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_DataFromLists" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_DataFromLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_DataFromListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_work_DataFromLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_work_DataFromLists" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_work_Consignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_work_Consignment" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_ConsignmentList_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_ConsignmentList" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_ConsignmentList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_ConsignmentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_ConsignmentEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_ConsignmentEx" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_ConsignmentEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_ConsignmentExResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_upd_StatusChange_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_upd_StatusChange" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_RD_InputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_RD" />
+  </wsdl:message>
+  <wsdl:message name="MDService_srv_select_RD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:srv_select_RDResponse" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendListItem_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendListItem" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendListTTN_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendListTTN" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendTableUpdated_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendTableUpdated" />
+  </wsdl:message>
+  <wsdl:message name="MDService_UploadMessageArhive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UploadMessageArhive" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendSingleMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendSingleMessage" />
+  </wsdl:message>
+  <wsdl:message name="MDService_SendUpdateClients_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendUpdateClients" />
+  </wsdl:message>
+  <wsdl:portType name="MDService">
+    <wsdl:operation name="Connect">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/Connect" message="tns:MDService_Connect_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/ConnectResponse" message="tns:MDService_Connect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disonnect">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/Disonnect" message="tns:MDService_Disonnect_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadMessageArhive">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/uploadMessageArhive" message="tns:MDService_uploadMessageArhive_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/uploadMessageArhiveResponse" message="tns:MDService_uploadMessageArhive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="uploadClients">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/uploadClients" message="tns:MDService_uploadClients_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/uploadClientsResponse" message="tns:MDService_uploadClients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_select_StatusList">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_select_StatusList" message="tns:MDService_srv_select_StatusList_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/srv_select_StatusListResponse" message="tns:MDService_srv_select_StatusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_select_DataFromLists">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_select_DataFromLists" message="tns:MDService_srv_select_DataFromLists_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/srv_select_DataFromListsResponse" message="tns:MDService_srv_select_DataFromLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_work_DataFromLists">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_work_DataFromLists" message="tns:MDService_srv_work_DataFromLists_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_work_Consignment">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_work_Consignment" message="tns:MDService_srv_work_Consignment_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_select_ConsignmentList">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_select_ConsignmentList" message="tns:MDService_srv_select_ConsignmentList_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/srv_select_ConsignmentListResponse" message="tns:MDService_srv_select_ConsignmentList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_select_ConsignmentEx">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_select_ConsignmentEx" message="tns:MDService_srv_select_ConsignmentEx_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/srv_select_ConsignmentExResponse" message="tns:MDService_srv_select_ConsignmentEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_upd_StatusChange">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_upd_StatusChange" message="tns:MDService_srv_upd_StatusChange_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="srv_select_RD">
+      <wsdl:input wsaw:Action="MCodeSilverlightServer/MDService/srv_select_RD" message="tns:MDService_srv_select_RD_InputMessage" />
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/srv_select_RDResponse" message="tns:MDService_srv_select_RD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendMessage" message="tns:MDService_SendMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendListItem">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendListItem" message="tns:MDService_SendListItem_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendListTTN">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendListTTN" message="tns:MDService_SendListTTN_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTableUpdated">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendTableUpdated" message="tns:MDService_SendTableUpdated_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMessageArhive">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/UploadMessageArhive" message="tns:MDService_UploadMessageArhive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSingleMessage">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendSingleMessage" message="tns:MDService_SendSingleMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUpdateClients">
+      <wsdl:output wsaw:Action="MCodeSilverlightServer/MDService/SendUpdateClients" message="tns:MDService_SendUpdateClients_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="MCodeSilverlightServer" elementFormDefault="qualified" targetNamespace="MCodeSilverlightServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd2" namespace="http://www.MCode.com/MClassLib/cListItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd3" namespace="http://www.MCode.com/MClassLib/cConsignmentItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="srv_select_DataFromLists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tbl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_select_DataFromListsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="srv_work_DataFromLists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tbl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item" nillable="true" type="q1:cListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="packageConsignmentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.MCode.com/MClassLib/cConsignmentItem" minOccurs="0" name="list" nillable="true" type="q2:ArrayOfcConsignmentItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="packageItemsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="list" nillable="true" type="q3:ArrayOfcListItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="packageError">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="err" nillable="true" type="q4:Exception" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

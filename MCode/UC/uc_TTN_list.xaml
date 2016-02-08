@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="MCode.UC.uc_TTN_list"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my="clr-namespace:MCode.Controls">
+    
+    <UserControl.Resources>
+       
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource brdr_Smoke}" >
+        <Grid x:Name="LayoutRoot"  Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+
+
+
+            <StackPanel Name="panel_control" Grid.Row="1" Margin="10,0,0,0" >
+                <!--<Button Width="200" Height="38" Content="За сегодня" FontSize="18"/>
+            <Button Width="200" Height="38" Content="За весь период" FontSize="18" Margin="10,0"/>-->
+
+                <StackPanel  Margin="0,5" Orientation="Horizontal">
+                    <TextBlock Text="Статус: " FontSize="16" />
+                    <sdk:Label Content="{Binding StatusNameString,Mode=TwoWay}" FontSize="16" FontWeight="SemiBold" />
+                    <!--<TextBlock Name="txt_Status" Text="{Binding StatusNameString,Mode=TwoWay}" FontSize="16" FontWeight="SemiBold"/>-->
+                    
+                </StackPanel>
+                
+                <StackPanel   Orientation="Horizontal">
+
+                    <sdk:DatePicker SelectedDate="{Binding BeginDT,Mode=TwoWay}" Margin="5" FontSize="12" SelectedDateFormat="Short" />
+                    <sdk:DatePicker SelectedDate="{Binding EndDT,Mode=TwoWay}" Margin="5" FontSize="12" SelectedDateFormat="Short" />
+                    <Button Name="btn_SetFilterDate" Content="  Выбрать  " Margin="5" FontSize="14" Click="btn_SetFilterDate_Click" />
+                </StackPanel>
+
+
+                
+            </StackPanel>
+
+
+            
+            <sdk:DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" ItemsSource="{Binding}" Grid.Row="2" 
+                      Name="dg_Root" VerticalAlignment="Top" Margin="10" SelectionChanged="dg_Root_SelectionChanged" IsReadOnly="True" >
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=ConsigmentNote_N,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=item_Status.Name,Mode=TwoWay}" Header="Статус" HeaderStyle="{StaticResource dg_Header}"/>
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=DT_In,Mode=TwoWay,StringFormat='dd.MM.yyyy hh:mm'}" HeaderStyle="{StaticResource dg_Header}"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=DT_Out,Mode=TwoWay,StringFormat='dd.MM.yyyy hh:mm'}" HeaderStyle="{StaticResource dg_Header}"/>
+
+                    
+                    <sdk:DataGridTextColumn Binding="{Binding Path=RichnessVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}"/>
+                    <sdk:DataGridTextColumn Binding="{Binding Path=MassBaseRichnessVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+                    <sdk:DataGridTextColumn Binding="{Binding Path=AcidityVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+                    <sdk:DataGridTextColumn Binding="{Binding Path=TemperatureVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=item_PurityGroup.Name,Mode=TwoWay}" Header="Группа по степени чистоты" HeaderStyle="{StaticResource dg_Header}" />
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=item_BacterialInsiminateClass.Name,Mode=TwoWay}" Header="Класс бактериального обсеменения" HeaderStyle="{StaticResource dg_Header}" />
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=DensityVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=item_Sort.Name,Mode=TwoWay}" Header="Сорт" HeaderStyle="{StaticResource dg_Header}" />
+
+                    <sdk:DataGridTextColumn Binding="{Binding Path=VolumeVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+                    <sdk:DataGridTextColumn Binding="{Binding Path=MassNetVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+                    <sdk:DataGridTextColumn Binding="{Binding Path=ProteinVal,Mode=TwoWay}" HeaderStyle="{StaticResource dg_Header}" />
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+            
+        </Grid>
+    </Border>
+</UserControl>

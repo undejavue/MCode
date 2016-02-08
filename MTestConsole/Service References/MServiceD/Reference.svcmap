@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7ebe3843-d2c7-4b12-be96-8e1dbfb07c6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://MNS1-022N/mcode/MServiceD.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MServiceD.wsdl" MetadataType="Wsdl" ID="77b00bc3-a353-406f-be29-0b12623903fd" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?wsdl" />
+    <MetadataFile FileName="MServiceD1.wsdl" MetadataType="Wsdl" ID="1e77f173-cb72-4b98-b964-617b205f4e67" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="MServiceD.xsd" MetadataType="Schema" ID="6d2ac1d5-a54a-417b-a966-363ac1e70a9e" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd4" />
+    <MetadataFile FileName="MServiceD1.xsd" MetadataType="Schema" ID="e9cfb6e1-6bb9-451f-990d-10d6f411469a" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd3" />
+    <MetadataFile FileName="MServiceD2.xsd" MetadataType="Schema" ID="84122053-77b4-4d69-90f6-a34297272c2e" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd2" />
+    <MetadataFile FileName="MServiceD3.xsd" MetadataType="Schema" ID="ff0330d6-0ba1-4020-b5cd-c0e3e7e7f6e7" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd1" />
+    <MetadataFile FileName="MServiceD4.xsd" MetadataType="Schema" ID="dadcbf2a-84ce-4c04-b5a3-0b015963cc42" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd0" />
+    <MetadataFile FileName="MServiceD5.xsd" MetadataType="Schema" ID="2bc2c69e-9478-4892-885d-0f9947d71d93" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd5" />
+    <MetadataFile FileName="MServiceD.disco" MetadataType="Disco" ID="d1e1df96-f9a3-4413-b34b-09749937b734" SourceId="1" SourceUrl="http://mns1-022n/mcode/MServiceD.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.MCode.com/MClassLib/cConsignmentItem" elementFormDefault="qualified" targetNamespace="http://www.MCode.com/MClassLib/cConsignmentItem" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd2" namespace="http://www.MCode.com/MClassLib/cListItem" />
+  <xs:import schemaLocation="http://mns1-022n/mcode/MServiceD.svc?xsd=xsd4" namespace="http://www.MCode.com/MClassLib/cBaseItem" />
+  <xs:complexType name="ArrayOfcConsignmentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cConsignmentItem" nillable="true" type="tns:cConsignmentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcConsignmentItem" nillable="true" type="tns:ArrayOfcConsignmentItem" />
+  <xs:complexType name="cConsignmentItem">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.MCode.com/MClassLib/cBaseItem" base="q1:cBaseItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AcidityVal" type="xs:double" />
+          <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConsigmentNote_N" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DT_In" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DT_Out" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DensityVal" type="xs:double" />
+          <xs:element minOccurs="0" name="MassBaseRichnessVal" type="xs:double" />
+          <xs:element minOccurs="0" name="MassNetFactVal" type="xs:double" />
+          <xs:element minOccurs="0" name="MassNetVal" type="xs:double" />
+          <xs:element minOccurs="0" name="ProteinVal" type="xs:double" />
+          <xs:element minOccurs="0" name="RichnessVal" type="xs:double" />
+          <xs:element minOccurs="0" name="TemperatureVal" type="xs:double" />
+          <xs:element minOccurs="0" name="VolumeVal" type="xs:double" />
+          <xs:element xmlns:q2="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item_BacterialInsiminateClass" nillable="true" type="q2:cListItem" />
+          <xs:element xmlns:q3="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item_Contractor" nillable="true" type="q3:cListItem" />
+          <xs:element xmlns:q4="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item_PurityGroup" nillable="true" type="q4:cListItem" />
+          <xs:element xmlns:q5="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item_Sort" nillable="true" type="q5:cListItem" />
+          <xs:element xmlns:q6="http://www.MCode.com/MClassLib/cListItem" minOccurs="0" name="item_Status" nillable="true" type="q6:cListItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="cConsignmentItem" nillable="true" type="tns:cConsignmentItem" />
+</xs:schema>
